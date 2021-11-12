@@ -1,6 +1,7 @@
+import { NextPage } from "next"
 import Link from "next/link"
 
-function HomePage() {
+const HomePage: NextPage = () => {
   return (
     <div>
       <h1>HomePage</h1>
