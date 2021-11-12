@@ -1,6 +1,7 @@
+import { NextPage } from "next"
 import { API_URL } from "../../data/api"
 
-function Locations({ locations }) {
+const Locations: NextPage<ILocations> = ({ locations }) => {
   return (
     <div>
       <ul>
@@ -23,6 +24,13 @@ export async function getStaticProps() {
       locations: locations.results,
     },
   }
+}
+
+type ILocations = {
+  locations: Array<{
+    id: string
+    name: string
+  }>
 }
 
 export default Locations

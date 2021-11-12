@@ -1,7 +1,13 @@
+import { NextPage } from "next"
 import { API_URL } from "../../data/api"
 
-function Location({ name }) {
+const Location: NextPage<ILocation> = ({ name }) => {
   return <div>{name}</div>
+}
+
+type ILocation = {
+  id: string
+  name: string
 }
 
 export default Location

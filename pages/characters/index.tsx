@@ -1,8 +1,9 @@
+import { NextPage } from "next"
 import Link from "next/link"
 
 import { API_URL } from "../../data/api"
 
-function Characters({ characters }) {
+const Characters: NextPage<ICharacters> = ({ characters }) => {
   return (
     <div>
       <ul>
@@ -27,6 +28,13 @@ export async function getStaticProps() {
       characters: characters.results,
     },
   }
+}
+
+type ICharacters = {
+  characters: Array<{
+    id: string
+    name: string
+  }>
 }
 
 export default Characters

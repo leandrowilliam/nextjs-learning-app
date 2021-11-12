@@ -1,7 +1,13 @@
+import { NextPage } from "next"
 import { API_URL } from "../../data/api"
 
-function Character({ name }) {
+const Character: NextPage<ICharacter> = ({ name }) => {
   return <div>{name}</div>
+}
+
+type ICharacter = {
+  id: string
+  name: string
 }
 
 export default Character
